@@ -31,20 +31,18 @@ namespace Items
             while (true)
             {
                 yield return new WaitForSeconds(productionTime);
-
                 _itemAmount++;
-
-                _itemRegistry.AddItems(target, _itemAmount);
-
                 OnUpdate?.Invoke(target.name, _itemAmount);
             }
         }
 
-        public int CollectResources()
+        public void CollectResources()
         {
-            var collected = _itemAmount;
+            _itemRegistry.AddItems(target, _itemAmount);
+            
             _itemAmount = 0;
-            return collected;
+            
+            OnUpdate?.Invoke(target.name, _itemAmount);
         }
     }
 }

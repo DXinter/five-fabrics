@@ -1,12 +1,16 @@
 using System;
 using System.Collections.Generic;
 using Items;
+using UnityEngine;
+using View;
 using Zenject;
 
 namespace Game
 {
     public class GameInstaller : MonoInstaller
     {
+        [Inject] private Settings _settings;
+
         public override void InstallBindings()
         {
             InstallManagers();
@@ -14,7 +18,7 @@ namespace Game
             InstallFactories();
             InstallPools();
         }
-        
+
         private void InstallManagers()
         {
             var managers = new List<Type>
@@ -44,6 +48,8 @@ namespace Game
 
         private void InstallFactories()
         {
+            Container.BindFactory<ItemData, PlayerCollectedItemsView, PlayerCollectedItemsView.Factory>()
+                .FromComponentInNewPrefab(_settings.itemsView);
         }
 
         private void InstallPools()
@@ -53,6 +59,8 @@ namespace Game
         [Serializable]
         public class Settings
         {
+            [Header("Prefabs")] 
+            public GameObject itemsView;
         }
     }
 }

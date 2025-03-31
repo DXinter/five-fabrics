@@ -13,7 +13,12 @@ namespace Items
                 _items[target] = +count;
             }
         }
-        
+
+        public int GetValue(ItemData key)
+        {
+            return _items.GetValueOrDefault(key, 0);
+        }
+
         public Dictionary<ItemData, int> GetAllItems()
         {
             return _items;
