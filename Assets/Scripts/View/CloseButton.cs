@@ -7,11 +7,11 @@ namespace View
     public class CloseButton : MonoBehaviour
     {
         [SerializeField] private Button button;
-        [SerializeField] private BackpackMenu backpackMenu;
+        [SerializeField] private BaseMenu menu;
 
         private void Awake()
         {
-            button.onClick.AddListener(backpackMenu.CloseMenu);
+            button.onClick.AddListener(menu.CloseMenu);
         }
         
     }

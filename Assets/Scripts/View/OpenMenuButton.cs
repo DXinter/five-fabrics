@@ -4,14 +4,14 @@ using UnityEngine.UI;
 
 namespace View
 {
-    public class BackpackButton : MonoBehaviour
+    public class OpenMenuButton : MonoBehaviour
     {
         [SerializeField] private Button button;
-        [SerializeField] private BackpackMenu backpackMenu;
+        [SerializeField] private BaseMenu menu;
 
         private void Awake()
         {
-            button.onClick.AddListener(backpackMenu.OpenMenu);
+            button.onClick.AddListener(menu.OpenMenu);
         }
 
     }

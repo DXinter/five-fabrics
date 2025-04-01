@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Audio;
 using Items;
 using UnityEngine;
 using View;
@@ -14,6 +15,7 @@ namespace Game
         public override void InstallBindings()
         {
             InstallManagers();
+            InstallAudioManager();
             InstallServices();
             InstallFactories();
             InstallPools();
@@ -23,6 +25,7 @@ namespace Game
         {
             var managers = new List<Type>
             {
+                typeof(AudioManager),
             };
 
             foreach (var manager in managers)
@@ -30,6 +33,11 @@ namespace Game
                 Container.BindInterfacesAndSelfTo(manager)
                     .FromNewComponentOnNewGameObject().UnderTransformGroup("Managers").AsSingle().NonLazy();
             }
+        }
+
+        private void InstallAudioManager()
+        {
+            
         }
 
         private void InstallServices()
