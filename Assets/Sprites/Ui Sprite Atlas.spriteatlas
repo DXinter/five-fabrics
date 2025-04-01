@@ -36,7 +36,7 @@ SpriteAtlas:
       m_ForceMaximumCompressionQuality_BC6H_BC7: 0
     packingSettings:
       serializedVersion: 2
-      padding: 8
+      padding: 4
       blockOffset: 1
       allowAlphaSplitting: 0
       enableRotation: 0
@@ -52,10 +52,10 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 0494492121e66574ebec6facdc90e2fc, type: 3}
     - {fileID: 2800000, guid: 6472499449b654949b5f307a672b3f44, type: 3}
     - {fileID: 2800000, guid: e6cbbe7a34b5a264981dbf6582616cb1, type: 3}
-    - {fileID: 2800000, guid: d986706f7a847104d87a5b6971ca203d, type: 3}
+    - {fileID: 2800000, guid: c4bb275b4a9c58f48a93c3be98875b09, type: 3}
     - {fileID: 2800000, guid: 9fb9ac71ad3b691438c908b32e3191fc, type: 3}
     - {fileID: 2800000, guid: 0a8679a96c2f23b4987dd6f7c449b795, type: 3}
-    - {fileID: 2800000, guid: c4bb275b4a9c58f48a93c3be98875b09, type: 3}
+    - {fileID: 2800000, guid: d986706f7a847104d87a5b6971ca203d, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}

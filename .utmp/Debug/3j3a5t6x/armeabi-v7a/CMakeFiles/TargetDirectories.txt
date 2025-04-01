@@ -1,0 +1,5 @@
+D:/Games/five-fabrics/.utmp/Debug/3j3a5t6x/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/Games/five-fabrics/.utmp/Debug/3j3a5t6x/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+D:/Games/five-fabrics/.utmp/Debug/3j3a5t6x/armeabi-v7a/FramePacing/CMakeFiles/swappywrapper.dir
+D:/Games/five-fabrics/.utmp/Debug/3j3a5t6x/armeabi-v7a/FramePacing/CMakeFiles/edit_cache.dir
+D:/Games/five-fabrics/.utmp/Debug/3j3a5t6x/armeabi-v7a/FramePacing/CMakeFiles/rebuild_cache.dir
