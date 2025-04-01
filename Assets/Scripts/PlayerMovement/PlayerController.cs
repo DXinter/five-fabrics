@@ -10,9 +10,10 @@ namespace PlayerMovement
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private float moveSpeed = 3f;
+        
         private Camera _mainCamera;
         private Vector3 _targetPosition;
-        private bool _isMove;
+        private bool _isMoving;
 
         private void Start()
         {
@@ -22,7 +23,7 @@ namespace PlayerMovement
 
         public void OnTap(InputAction.CallbackContext context)
         {
-            if (!context.performed || BackpackMenu.IsMenuOpen) return;
+            if (!context.performed || BaseMenu.IsMenuOpen) return;
 
             Vector2 inputPosition;
 
@@ -42,18 +43,18 @@ namespace PlayerMovement
             if (hit.collider.TryGetComponent(out Ground ground))
             {
                 _targetPosition = hit.point;
-                _isMove = true;
+                _isMoving = true;
             }
             else if (hit.collider.TryGetComponent<ItemFactory>(out var building))
             {
                 _targetPosition = building.transform.position;
-                _isMove = true;
+                _isMoving = true;
             }
         }
 
         private void Update()
         {
-            if (!_isMove) return;
+            if (!_isMoving) return;
             
             if (EventSystem.current.IsPointerOverGameObject())
             {
@@ -62,10 +63,12 @@ namespace PlayerMovement
             }
 
             transform.position = Vector3.MoveTowards(transform.position, _targetPosition, moveSpeed * Time.deltaTime);
-
-            if (Vector3.Distance(transform.position, _targetPosition) < 0.1f)
+            
+            if (Mathf.Abs(transform.position.x - _targetPosition.x) < 0.02f && 
+                Mathf.Abs(transform.position.z - _targetPosition.z) < 0.02f)
             {
-                _isMove = false;
+                _targetPosition = transform.position;
+                _isMoving = false;
             }
         }
 
@@ -73,6 +76,8 @@ namespace PlayerMovement
         {
             if (!other.TryGetComponent<ItemFactory>(out var building)) return;
             building.CollectResources();
+            
+            _isMoving = false;
         }
     }
 }

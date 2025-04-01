@@ -3125,7 +3125,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3169,8 +3169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  xLimits: {x: -10, y: 10}
-  zLimits: {x: -20, y: 10}
+  xLimits: {x: -20, y: 20}
+  zLimits: {x: -40, y: 0}
 --- !u!1 &1024183911
 GameObject:
   m_ObjectHideFlags: 0
